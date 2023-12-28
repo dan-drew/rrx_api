@@ -1,0 +1,4 @@
+module RRXApi
+  VERSION: String
+  RAILS_VERSION: String
+end
