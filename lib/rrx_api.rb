@@ -2,8 +2,11 @@
 
 require_relative 'rrx_api/version'
 require_relative 'rrx_api/railtie'
+require 'rrx_config'
+require 'rrx_logging'
+require 'rack/cors'
 
-module RRXApi
+module RrxApi
   class Error < StandardError; end
   # Your code goes here...
 end

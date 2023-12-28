@@ -1,24 +1,36 @@
 # RrxApi
 
-TODO: Delete this and the text below, and describe your gem
+Opinionated base library for simplifying development of Rails API projects.
 
-Welcome to your new gem! In this directory, you'll find the files you need to be able to package up your Ruby library into a gem. Put your Ruby code in the file `lib/rrx_api`. To experiment with that code, run `bin/console` for an interactive prompt.
+Note that this gem expects the [rrx_dev](https://github.com/rails-rrx/rrx_api/blob/main/CODE_OF_CONDUCT.md) but does
+not list it as a dependency as it is only needed for development and tests. Please add it to your Gemfile manually
+or as described below with the `bundle add` command.
 
 ## Installation
 
-TODO: Replace `UPDATE_WITH_YOUR_GEM_NAME_PRIOR_TO_RELEASE_TO_RUBYGEMS_ORG` with your gem name right after releasing it to RubyGems.org. Please do not do it earlier due to security reasons. Alternatively, replace this section with instructions to install your gem from git if you don't plan to release to RubyGems.org.
-
 Install the gem and add to the application's Gemfile by executing:
 
-    $ bundle add UPDATE_WITH_YOUR_GEM_NAME_PRIOR_TO_RELEASE_TO_RUBYGEMS_ORG
+```shell
+$ bundle add rrx_dev --group "development, test"
+$ bundle add rrx_api
+```
 
 If bundler is not being used to manage dependencies, install the gem by executing:
 
-    $ gem install UPDATE_WITH_YOUR_GEM_NAME_PRIOR_TO_RELEASE_TO_RUBYGEMS_ORG
+```shell
+$ gem install rrx_dev rrx_api
+```
+
+After installing, initialize your project with `rrx_api_setup`. Note this will also invoke `rrx_dev_setup app` to
+perform development and test setup.
+
+```shell
+$ rrx_api_setup
+```
 
 ## Usage
 
-TODO: Write usage instructions here
+TODO
 
 ## Development
 
@@ -28,7 +40,7 @@ To install this gem onto your local machine, run `bundle exec rake install`. To 
 
 ## Contributing
 
-Bug reports and pull requests are welcome on GitHub at https://github.com/[USERNAME]/rrx_api. This project is intended to be a safe, welcoming space for collaboration, and contributors are expected to adhere to the [code of conduct](https://github.com/[USERNAME]/rrx_api/blob/main/CODE_OF_CONDUCT.md).
+Bug reports and pull requests are welcome on GitHub at https://github.com/rails-rrx/rrx_api. This project is intended to be a safe, welcoming space for collaboration, and contributors are expected to adhere to the [code of conduct](https://github.com/rails-rrx/rrx_api/blob/main/CODE_OF_CONDUCT.md).
 
 ## License
 

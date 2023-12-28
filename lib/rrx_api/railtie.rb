@@ -1,10 +1,20 @@
-module RRXApi
+require 'rails'
+require 'active_model/railtie'
+require 'active_record/railtie'
+require 'action_controller/railtie'
+require 'action_text/engine'
+require 'action_view/railtie'
+require 'jbuilder'
+require 'rack/cors'
+require 'actionpack/action_caching'
+
+module RrxApi
   class Railtie < ::Rails::Engine
-    initializer 'didja_rails_dev.api_docs_config', before: :load_config_initializers do |_app|
+    initializer 'rrx.api_docs_config', before: :load_config_initializers do |_app|
       Rails.configuration.api_docs = { 'API' => 'swagger.yaml' }
     end
 
-    initializer 'didja_rails_dev.api_docs', after: :load_config_initializers do |app|
+    initializer 'rrx.api_docs', after: :load_config_initializers do |app|
       # Setup Swagger endpoints if docs exist
       if swagger_root?
         require 'rswag/api'

@@ -1,11 +1,12 @@
 # frozen_string_literal: true
-require 'rrx_api/current'
 
-module RRXApi
+module RrxApi
   class Record < ActiveRecord::Base
-    # @return [RRXApi::Logging::Logger]
+    self.abstract_class = true
+
+    # @return [RrxLogging::Logger]
     def logger
-      @logger ||= RRXApi::Current.logger || base.logger
+      @logger ||= RrxLogging.current || Rails.logger
     end
   end
 end

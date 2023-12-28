@@ -1,24 +1,27 @@
 # frozen_string_literal: true
 
-require_relative "lib/rrx_api/version"
+require_relative 'lib/rrx_api/version'
 
 Gem::Specification.new do |spec|
-  spec.name = "rrx_api"
-  spec.version = RRXApi::VERSION
-  spec.authors = ["Dan Drew"]
-  spec.email = ["dan.drew@hotmail.com"]
+  source_uri = 'https://github.com/rails-rrx/rrx_api'
+  home_uri = source_uri
 
-  spec.summary = "TODO: Write a short summary, because RubyGems requires one."
-  spec.description = "TODO: Write a longer description or delete this line."
-  spec.homepage = "TODO: Put your gem's website or public repo URL here."
-  spec.license = "MIT"
-  spec.required_ruby_version = ">= 2.6.0"
+  spec.name = 'rrx_api'
+  spec.version = RrxApi::VERSION
+  spec.authors = ['Dan Drew']
+  spec.email = ['dan.drew@hotmail.com']
 
-  spec.metadata["allowed_push_host"] = "TODO: Set to your gem server 'https://example.com'"
+  spec.summary = 'Ruby on Rails core API support'
+  # spec.description = "TODO: Write a longer description or delete this line."
+  spec.homepage = home_uri
+  spec.license = 'MIT'
+  spec.required_ruby_version = '>= 3.1'
 
-  spec.metadata["homepage_uri"] = spec.homepage
-  spec.metadata["source_code_uri"] = "TODO: Put your gem's public repo URL here."
-  spec.metadata["changelog_uri"] = "TODO: Put your gem's CHANGELOG.md URL here."
+  # spec.metadata["allowed_push_host"] = "TODO: Set to your gem server 'https://example.com'"
+
+  spec.metadata['homepage_uri'] = spec.homepage
+  spec.metadata['source_code_uri'] = source_uri
+  # spec.metadata["changelog_uri"] = "#{source_uri}..."
 
   # Specify which files should be added to the gem when it is released.
   # The `git ls-files -z` loads the files in the RubyGem that have been added into git.
@@ -27,9 +30,9 @@ Gem::Specification.new do |spec|
       (File.expand_path(f) == __FILE__) || f.start_with?(*%w[bin/ test/ spec/ features/ .git .circleci appveyor])
     end
   end
-  spec.bindir = "exe"
-  spec.executables = spec.files.grep(%r{\Aexe/}) { |f| File.basename(f) }
-  spec.require_paths = ["lib"]
+  spec.bindir = 'exe'
+  spec.executables = %w[rrx_api_setup]
+  spec.require_paths = ['lib']
 
   spec.add_dependency 'actionpack-action_caching'
   spec.add_dependency 'bootsnap'
@@ -39,11 +42,13 @@ Gem::Specification.new do |spec|
   spec.add_dependency 'kaminari'
   spec.add_dependency 'puma'
   spec.add_dependency 'rack-cors'
-  spec.add_dependency 'rails', RRXApi::RAILS_VERSION
+  spec.add_dependency 'rails', RrxApi::RAILS_VERSION
   spec.add_dependency 'rails-healthcheck'
   spec.add_dependency 'rswag-api'
   spec.add_dependency 'rswag-ui'
   spec.add_dependency 'tzinfo-data' # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
+  spec.add_dependency 'rrx_logging'
+  spec.add_dependency 'rrx_config'
 
   spec.add_development_dependency 'rrx_dev'
 end
